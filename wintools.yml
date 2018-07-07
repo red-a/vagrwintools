@@ -1,0 +1,5 @@
+---
+- name: Deploy tools for testing
+  hosts: test
+  roles:
+    - wintools

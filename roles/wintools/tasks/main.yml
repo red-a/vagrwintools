@@ -1,0 +1,30 @@
+---
+- name: Copy file.txt from template to remote windows host
+  win_template:
+    src: file.txt.j2
+    dest: "C:\\file.txt"
+    force: no
+
+- name: Install Chrome
+  win_package:
+    path: https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise64.msi
+    product_id: GoogleChrome
+    state: present
+
+- name: Download Firefox
+  win_get_url:
+    url: "https://download.mozilla.org/?product=firefox-latest&os=win&lang=en-US"
+    dest: '{{ ansible_env.TEMP }}\FirefoxSetup.exe'
+    force: no
+
+- name: Install Firefox
+  win_package:
+    path: '{{ ansible_env.TEMP }}\FirefoxSetup.exe'
+    product_id: Firefox
+    arguments: -ms
+    state: present
+
+- name: Install IIS (Web-Server only)
+  win_feature:
+    name: Web-Server
+    state: present
