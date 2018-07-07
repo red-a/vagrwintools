@@ -14,7 +14,7 @@ See more details [Windows System Prep](https://docs.ansible.com/ansible/2.3/intr
 
 ## Centos7
 
-Install ansible and required plugins
+Before run playbook install ansible and required plugins
 
 ```sh
 $ sudo easy_install pip
@@ -27,4 +27,4 @@ $ sudo pip install ansible pywinrm[credssp]
 $ sudo ansible-playbook -i inventory.yml wintools.yml
 ```
 
-Provision of Chrome, Firefox, any example with template, install IIS (Web-Server only) on remote windows machine
+Deploy Chrome, Firefox, any example with template, install IIS (Web-Server only) on remote windows machine
