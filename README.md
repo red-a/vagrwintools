@@ -1,3 +1,5 @@
+I am editing the README file. Adding some more details about the project description.
+
 # vagrwintools
 
 Runing up two virtual machines: centos7 and win2012r2
